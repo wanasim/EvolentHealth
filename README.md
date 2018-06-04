@@ -12,17 +12,17 @@ To see a demo of the app, please click here --> [Website](https://evolent-contac
 |   └── manifest.json
 └── src
     ├── actions
-    │   └── index.js
+    │   └── index.js # actions to add/edit/delete contacts
     ├── reducers
-    │   └── index.js
+    │   └── index.js # listens for actions and updates store. State is initialized with a single contact.
     ├── components
-    |   ├── CreateContact.js
-    │   ├── ListContacts.js
-    │   └── EditForm.js
-    │   └── FormLayout.js
-    │   └── FormError.js
+    |   ├── CreateContact.js # component to handle new contact creation
+    │   ├── ListContacts.js # provides a list of contacts and search capability
+    │   └── EditForm.js # edits a specific contact
+    │   └── FormLayout.js # provides basic form layout and validation
+    │   └── FormError.js # lists form errors
     ├── icons # Contains svg icons
-    ├── App.css # Styles for your app. Feel free to customize this as you desire.
+    ├── App.css 
     ├── App.js # Root of app.
     ├── App.test.js
     ├── index.css # Global styles
@@ -31,52 +31,13 @@ To see a demo of the app, please click here --> [Website](https://evolent-contac
 ```
 
 
-For the project to build, **these files must exist with exact filenames**:
+To run the app, **follow these steps**:
 
-* `public/index.html` is the page template;
-* `src/index.js` is the JavaScript entry point.
+* `npm install`
+* `npm start` is the JavaScript entry point.
 
-You can delete or rename the other files.
+This app is a React-Redux application that utilizes the React-Redux package. Although "vanilla" Redux could be used, React-Redux allows for more abstraction (e.g. do not have to pass store down components). Please note nothing is persisted so refreshing the page will default to the initial state.
 
-You may create subdirectories inside `src`. For faster rebuilds, only files inside `src` are processed by Webpack.<br>
-You need to **put any JS and CSS files inside `src`**, otherwise Webpack won’t see them.
+A single actions file (`index.js`) contains several actions to add/create/delete contacts while a single reducer file (`index.js`) listens for any actions and updates the store accordingly. The reducer file also initializes the store with a contact.
 
-Only files inside `public` can be used from `public/index.html`.<br>
-Read instructions below for using assets from JavaScript and HTML.
-
-You can, however, create more top-level directories.<br>
-They will not be included in the production build so you can use them for things like documentation.
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-
-## Updating to New Releases
-
-Create React App is divided into two packages:
-
-* `create-react-app` is a global command-line utility that you use to create new projects.
-* `react-scripts` is a development dependency in the generated projects (including this one).
-
-You almost never need to update `create-react-app` itself: it delegates all the setup to `react-scripts`.
-
-When you run `create-react-app`, it always creates the project with the latest version of `react-scripts` so you’ll get all the new features and improvements in newly created apps automatically.
-
-To update an existing project to a new version of `react-scripts`, [open the changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md), find the version you’re currently on (check `package.json` in this folder if you’re not sure), and apply the migration instructions for the newer versions.
-
-In most cases bumping the `react-scripts` version in `package.json` and running `npm install` in this folder should be enough, but it’s good to consult the [changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md) for potential breaking changes.
-
-We commit to keeping the breaking changes minimal so you can upgrade `react-scripts` painlessly.
-
-## Sending Feedback
-
-We are always open to [your feedback](https://github.com/facebookincubator/create-react-app/issues).
+The root file (`App.js`) leverages React-Redux's connect method to access the store and passes down state (all contacts) and actions (such as add and delete) to child components.
