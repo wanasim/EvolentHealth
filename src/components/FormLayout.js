@@ -29,14 +29,17 @@ class FormLayout extends Component {
     }
   }
 
+  //update state input as user types
   _handleInput = (e) => {
     const input = e.target.value
     const name = e.target.name
     this.setState({name:input}, () =>{
+      //concurrently validate input
       this._validateInput(name, input)
     })
   }
 
+  //validate form input
   _validateInput = (name, input) => {
     let {firstNameValid, lastNameValid, emailValid, phoneValid, errors} = this.state
     const nameError = "Names must be at least 2 characters"
@@ -52,7 +55,7 @@ class FormLayout extends Component {
         errors.nameError = !lastNameValid ? nameError : ''
         break;
       case 'phone':
-        phoneValid = input.match(/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/)
+        phoneValid = input.match(/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\]{0,1}[0-9]{3}[-\s\]{0,1}[0-9]{4}$/)
         errors.phoneError = !phoneValid ? phoneError : ''
         break;
       case 'email':
@@ -65,6 +68,7 @@ class FormLayout extends Component {
     this.setState({firstNameValid,lastNameValid,emailValid, phoneValid, errors}, this._validateForm)
   }
 
+  //validate form once all fields are correct
   _validateForm = () => {
     this.setState({validForm: this.state.firstNameValid && this.state.lastNameValid && this.state.emailValid && this.state.phoneValid})
   }

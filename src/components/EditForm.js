@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import serializeForm from 'form-serialize';
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import FormLayout from './FormLayout.js'
 
 class EditForm extends Component{
@@ -9,19 +9,19 @@ class EditForm extends Component{
     finalInput: {}
   }
 
-  static propTypes = {
-     allContacts: PropTypes.array.isRequired,
-     onEditContact: PropTypes.array.isRequired
-  }
+  // static propTypes = {
+  //    allContacts: PropTypes.array.isRequired,
+  //    onEditContact: PropTypes.Function.isRequired
+  // }
 
-
+  //submit button enabled once inputs are valid from FormLayout component
   _handleSubmit = (e) => {
      e.preventDefault()
      const values = serializeForm(e.target, { hash: true});
      values.id = this.props.match.params.id
-     // if ( this.props.onEditContact){
-     //   this.setState({finalInput:values}, ()=> this.props.onEditContact(values))
-     // }
+     if ( this.props.onEditContact){
+       this.setState({finalInput:values}, ()=> this.props.onEditContact(values))
+     }
 
   }
 
@@ -32,7 +32,7 @@ class EditForm extends Component{
       if(contact.id===this.props.match.params.id){
         currContact = contact
       }
-      return
+      return currContact
     })
     return (
       <div>

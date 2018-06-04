@@ -13,6 +13,7 @@ class FormError extends Component {
             <p key={error} className="red">{errors[error]}</p>
           )
         }
+        return ''
       })}
       </div>
     )
