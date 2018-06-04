@@ -22,7 +22,7 @@ To see a demo of the app, please click here --> [Website](https://evolent-contac
     │   └── FormLayout.js # provides basic form layout and validation
     │   └── FormError.js # lists form errors
     ├── icons # Contains svg icons
-    ├── App.css 
+    ├── App.css
     ├── App.js # Root of app.
     ├── App.test.js
     ├── index.css # Global styles
@@ -40,4 +40,4 @@ This app is a React-Redux application that utilizes the React-Redux package. Alt
 
 A single actions file (`index.js`) contains several actions to add/create/delete contacts while a single reducer file (`index.js`) listens for any actions and updates the store accordingly. The reducer file also initializes the store with a contact.
 
-The root file (`App.js`) leverages React-Redux's connect method to access the store and passes down state (all contacts) and actions (such as add and delete) to child components.
+The root file (`App.js`) leverages React-Redux's connect method to access the store and passes down state (all contacts) and action creators (such as add and delete) to child components.
