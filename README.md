@@ -1,20 +1,53 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-[Demo](https://evolent-contacts.herokuapp.com/)
+To see a demo of the app, please click here --> [Website](https://evolent-contacts.herokuapp.com/)
 
 ## Folder Structure
 
-After creation, your project should look like this:
-
+├── README.md - This file.
+├── package.json # npm package manager file. It's unlikely that you'll need to modify this.
+├── public
+│   ├── favicon.ico # React Icon, You may change if you wish.
+│   └── index.html # DO NOT MODIFY
+|   └── manifest.json
+└── src
+    ├── actions
+    │   └── index.js
+    ├── reducers
+    │   └── index.js
+    ├── components
+    |   ├── CreateContact.js
+    │   ├── ListContacts.js
+    │   └── EditForm.js
+    │   └── FormLayout.js
+    │   └── FormError.js
+    ├── icons # Contains svg icons
+    ├── App.css # Styles for your app. Feel free to customize this as you desire.
+    ├── App.js # Root of app.
+    ├── App.test.js
+    ├── index.css # Global styles
+    └── index.js
+    └── registerServiceWorker.js
 ```
-my-app/
+evolent-contacts/
   README.md
-  node_modules/
   package.json
   public/
     index.html
     favicon.ico
+    manifest.json
   src/
+    actions/
+      index.js
+    reducers/
+      index.js
+    components/
+      CreateContact.js
+      ListContacts.js
+      EditForm.js
+      FormLayout.js
+      FormError.js
+    icons/
     App.css
     App.js
     App.test.js
