@@ -8,6 +8,7 @@ class CreateContact extends Component {
      finalInput:{}
    }
   
+  //handle submit occurs once validation is completed from FormLayout component
    _handleSubmit = (e) => {
       e.preventDefault()
       const values = serializeForm(e.target, { hash: true})
@@ -19,35 +20,6 @@ class CreateContact extends Component {
         
         this.props.onCreateContact(values)
       })}
-   }
-   
-   _handleInput = (e) => {
-     const input = e.target.value
-     const name = e.target.name 
-     this.setState({name:input}, () =>{
-       this._validateInput(name, input)
-     })
-   }
-   
-   _validateInput = (name, input) => {
-     let firstNameValid
-     const nameError = "Names must be at least 2 characters"
-     switch(name){
-      case 'firstName':
-        firstNameValid = input.length > 1;
-        break;
-      case 'lastName':
-        firstNameValid = input.length > 1;
-        
-        break;
-      default:
-        break;
-     }
-     this.setState({firstNameValid}, this._validateForm)
-   }
-   
-   _validateForm = () => {
-     this.setState({validForm: this.state.firstNameValid && this.state.lastNameValid && this.state.emailValid && this.state.phoneValid})
    }
 
    render() {

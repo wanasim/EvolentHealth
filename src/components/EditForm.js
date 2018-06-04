@@ -11,6 +11,7 @@ class EditForm extends Component{
 
   static propTypes = {
      allContacts: PropTypes.array.isRequired,
+     onEditContact: PropTypes.array.isRequired
   }
 
 
@@ -18,9 +19,9 @@ class EditForm extends Component{
      e.preventDefault()
      const values = serializeForm(e.target, { hash: true});
      values.id = this.props.match.params.id
-     if ( this.props.onEditContact){
-       this.setState({finalInput:values}, ()=> this.props.onEditContact(values))
-     }
+     // if ( this.props.onEditContact){
+     //   this.setState({finalInput:values}, ()=> this.props.onEditContact(values))
+     // }
 
   }
 

@@ -5,10 +5,10 @@ To see a demo of the app, please click here --> [Website](https://evolent-contac
 ## Folder Structure
 ```bash
 ├── README.md - This file.
-├── package.json # npm package manager file. It's unlikely that you'll need to modify this.
+├── package.json
 ├── public
-│   ├── favicon.ico # React Icon, You may change if you wish.
-│   └── index.html # DO NOT MODIFY
+│   ├── favicon.ico
+│   └── index.html
 |   └── manifest.json
 └── src
     ├── actions
@@ -41,3 +41,8 @@ This app is a React-Redux application that utilizes the React-Redux package. Alt
 A single actions file (`index.js`) contains several actions to add/create/delete contacts while a single reducer file (`index.js`) listens for any actions and updates the store accordingly. The reducer file also initializes the store with a contact.
 
 The root file (`App.js`) leverages React-Redux's connect method to access the store and passes down state (all contacts) and action creators (such as add and delete) to child components.
+
+**Routes**:
+* `/`: list all contacts
+* `/create`: create contact
+* `/edit/:id`: edits a specific contact

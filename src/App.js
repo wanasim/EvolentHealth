@@ -33,12 +33,14 @@ class App extends Component {
   }
 }
 
+//provides state to this.props
 function mapStateToProps({contacts}){
   return {
     allContacts: contacts.all_contacts
   }
 }
 
+//provides action creators/dispatch to props
 function mapDispatchToProps(dispatch){
   return {
     addContact: (contact) => dispatch(addContact(contact)),
@@ -46,5 +48,6 @@ function mapDispatchToProps(dispatch){
     editContact: (contact) => dispatch(editContact(contact))
   }
 }
-// exporting App.js file so other files can import
+// wrapping the export with withRouter passes necessary props like history
+// connect() method provides access to the store
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App))
