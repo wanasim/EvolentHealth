@@ -3,7 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 To see a demo of the app, please click here --> [Website](https://evolent-contacts.herokuapp.com/)
 
 ## Folder Structure
-
+```bash
 ├── README.md - This file.
 ├── package.json # npm package manager file. It's unlikely that you'll need to modify this.
 ├── public
@@ -29,32 +29,7 @@ To see a demo of the app, please click here --> [Website](https://evolent-contac
     └── index.js
     └── registerServiceWorker.js
 ```
-evolent-contacts/
-  README.md
-  package.json
-  public/
-    index.html
-    favicon.ico
-    manifest.json
-  src/
-    actions/
-      index.js
-    reducers/
-      index.js
-    components/
-      CreateContact.js
-      ListContacts.js
-      EditForm.js
-      FormLayout.js
-      FormError.js
-    icons/
-    App.css
-    App.js
-    App.test.js
-    index.css
-    index.js
-    logo.svg
-```
+
 
 For the project to build, **these files must exist with exact filenames**:
 
